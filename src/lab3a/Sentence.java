@@ -1,7 +1,5 @@
 package lab3a;
 
-import lab3.Book;
-
 public class Sentence implements Comparable<Sentence > {
     private String sent;
 
