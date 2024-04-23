@@ -14,7 +14,7 @@ class Progression {
     }
 
     public boolean contains(int num, int k) {
-        return ((num - this.a) % this.d == 0) && ((num - this.a) / this.d < k);
+        return ((k - this.a) % this.d == 0) && ((k - this.a) / this.d < num);
     }
 
     public Integer sumprog(int n) {
@@ -38,7 +38,6 @@ class Progression {
         List<Integer> arr = new ArrayList<>();
         IntStream myStream = IntStream.generate(new supp());
         myStream.limit(k).forEach(x -> arr.add(a + x * d));
-        System.out.println(arr);
         Optional<Integer> ans = arr.stream().filter(x -> Progression.ispower(a + x * d)).findFirst();
         return ans.isPresent();
     }
